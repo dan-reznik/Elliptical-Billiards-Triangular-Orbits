@@ -69,7 +69,7 @@ sheets_id <- Sys.getenv("sheet_id")
 ```
 <!-- {% endraw %} -->
 
-# Pages with Results, Experiments, Visualizations:
+# Our Main Pages
   
 1. [Invariants of 3- and N-Periodics in an Elliptic Billiard](index.html)
 

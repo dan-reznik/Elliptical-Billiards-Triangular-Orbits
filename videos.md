@@ -1,7 +1,7 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
 author: Dan Reznik, Ronaldo Garcia, Jair Koiller, Mark Helman
-date: "Last update: 2020-07-12 12:26:25"
+date: "Last update: 2020-07-12 12:30:30"
 output:
   bookdown::html_document2:
       theme: cosmo
@@ -52,7 +52,7 @@ bookdown::html_document2:
 
 <!-- {% endraw %} -->
 
-# Pages with Results, Experiments, Visualizations:
+# Our Main Pages
   
 1. [Invariants of 3- and N-Periodics in an Elliptic Billiard](index.html)
 
