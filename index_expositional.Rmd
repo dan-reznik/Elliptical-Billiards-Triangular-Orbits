@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Introduction
+# Integrability
 
 Elliptic billiards are *integrable*: both energy and Joachimsthal's Integral [@kozlov91] are conserved. The latter is given by the scalar product of the velocity vector with the gradient to the ellipse at the point of reflection:
 
