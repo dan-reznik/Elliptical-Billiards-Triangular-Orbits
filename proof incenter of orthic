@@ -1,0 +1,40 @@
+Let T=ABC be a triangle and T_h=A'B'C' its orthic. Let X_h(1) be the orthic's incenter.
+
+1) T acute
+
+- Th vertices are on the sides of T.
+
+Lemma 1: [Rozikov] the altitudes of T are bisectors of Th
+
+Corollary: since the altitudes meet at X_4, X_h(1) = X_4
+
+2) T obtuse
+
+- Th has one vertex on T's longest side, and two others on the extensions of its two sides, i.e., the latter two vertices are exterior to T.
+
+Lemma: the triangle Te = A X4 C is the (acute) Excentral Triangle of Th.
+
+- since AC' with CA' are altitudes of ABC, their intersection is at X_4.
+
+- CC', AA', X4 B' are altitudes of Te, i.e., Th=A'B'C' is the orthic of A X4 C, i.e., Te is Th's excentral.
+
+Theorem: the X_h(1) is B
+
+By Lemma 1, altitudes CC', AA', X4 B' are bisectors of C', A', and B'. These meet at B, which completes the proof.
+
+Corollary: X_4 is an excenter of Th {coxeter}
+
+Since Th is the orthic of A X4 C, X_4 is an excenter of Th.
+
+Observation: for T obtuse both ABC and AX4C have the same orthic. Under the orthic map, the pre-image of Th contains both T and the excentral of Th.  
+
+When acute both preimages of Th are Te.
+
+Given an orthic Th of an obtuse, to get its two pre-images:
+
+a) acute Te: excentral of Th
+b) obtuse Th: take X_h(1) and the endpoints of the longest side of Te or the side of Th which passes through the vertex of Th with the smallest angle (B' in the drawing).
+
+
+
+

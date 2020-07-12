@@ -1,0 +1,913 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35679,        904]
+NotebookOptionsPosition[     35431,        891]
+NotebookOutlinePosition[     35778,        906]
+CellTagsIndexPosition[     35735,        903]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"toShowNeedsGr", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"(*", "lines", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<interfeuerline\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Dashed", ",", "Gray", ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\"\<antifeu\>\"", ",", "\"\<feu\>\""}], "}"}], "/.", 
+           "notables"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<feuerbachline\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Black", ",", "Dashed", ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<feu\>\"", "/.", "notables"}], ",", 
+            RowBox[{"\"\<npc\>\"", "/.", "notables"}]}], "}"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<darbouxgergonneline\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<bar\>\"", "/.", "ptClrs"}], ",", "Thick", ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<ger\>\"", "/.", "notables"}], ",", "x144"}], "}"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<mittengergonneline\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<bar\>\"", "/.", "ptClrs"}], ",", "Thick", ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<ger\>\"", "/.", "notables"}], ",", 
+            RowBox[{"\"\<mit\>\"", "/.", "notables"}]}], "}"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<mittenx142line\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<bar\>\"", "/.", "ptClrs"}], ",", "Thick", ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<mit\>\"", "/.", "notables"}], ",", "x142"}], "}"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<x88antifeuerline\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Dashed", ",", 
+         RowBox[{"Darker", "@", "Cyan"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\"\<antifeu\>\"", ",", "\"\<x88\>\""}], "}"}], "/.", 
+           "notables"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<inc2nagel\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<nag\>\"", "/.", "ptClrs"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<nagel\>\"", "/.", "excCircleData"}], ",", 
+            RowBox[{"\"\<inc\>\"", "/.", "notables"}]}], "}"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<darbouxlines\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Dashed", ",", 
+         RowBox[{"PointSize", "@", "Large"}], ",", "Red", ",", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{"MapThread", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Line", "@", 
+               RowBox[{"{", 
+                RowBox[{"#1", ",", 
+                 RowBox[{"ray", "[", 
+                  RowBox[{"#1", ",", 
+                   RowBox[{"#2", "-", "#1"}], ",", "5"}], "]"}]}], "}"}]}], 
+              "&"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"actData", "[", "\"\<tri\>\"", "]"}], ",", 
+               RowBox[{"RotateLeft", "@", "excTps"}]}], "}"}]}], "]"}], ","}],
+           "*)"}], 
+         RowBox[{"MapThread", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{"#1", ",", "#2"}], "}"}], "]"}], "&"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"actData", "[", "\"\<tri\>\"", "]"}], ",", 
+             RowBox[{"actData", "[", "\"\<tps\>\"", "]"}]}], "}"}]}], "]"}]}],
+         "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{",", 
+          RowBox[{"Point", "@", "dbx"}], ",", "Cyan", ",", 
+          RowBox[{"Point", "@", 
+           RowBox[{"getX144Trilin", "[", 
+            RowBox[{"orbit", ",", "sides"}], "]"}]}]}], "*)"}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<antiorthicaxis\>\""}], ",", 
+       RowBox[{"drawAntiOrthicAxis", "[", 
+        RowBox[{"orbit", ",", 
+         RowBox[{"RotateLeft", "@", "exc"}], ",", "False"}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<isotomicaxis\>\""}], ",", 
+       RowBox[{"drawIsotomicAxis", "[", 
+        RowBox[{"orbit", ",", "sides", ",", "actData", ",", 
+         RowBox[{"Darker", "@", "Cyan"}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{"exc", " ", "objects"}], "*)"}], 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<exbisectors\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}], ")"}], ",", 
+         RowBox[{"FaceForm", "[", "None", "]"}], ",", 
+         RowBox[{"Arrowheads", "[", "Medium", "]"}], ",", 
+         RowBox[{"MapThread", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Arrow", "[", 
+             RowBox[{"{", 
+              RowBox[{"#1", ",", 
+               RowBox[{"ray", "[", 
+                RowBox[{"#1", ",", "#2", ",", ".5"}], "]"}]}], "}"}], "]"}], 
+            "&"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"exc", ",", "excNormals"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<exfeuerbach\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Medium"}], ",", 
+         RowBox[{"(", 
+          RowBox[{"\"\<npc\>\"", "/.", "ptClrs"}], ")"}], ",", 
+         RowBox[{"Point", "[", 
+          RowBox[{"\"\<feus\>\"", "/.", "excCircleData"}], "]"}]}], "}"}], 
+       ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<exbaricenter\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<bar\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<bar\>\"", "/.", "excNotables"}], ",", "\"\<xB\>\""}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<exnpc\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\"\<npc\>\"", "/.", "ptClrs"}], ")"}], ",", "Thick", ",", 
+         RowBox[{"Circle", "[", 
+          RowBox[{"npc", ",", 
+           RowBox[{"\"\<npcRadius\>\"", "/.", "excNotables"}]}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"(*", "triangles", "*)"}], 
+     RowBox[{"drTriDataOpts", "[", 
+      RowBox[{"a", ",", "actData", ",", "\"\<anticompl\>\"", ",", 
+       RowBox[{"\"\<anticompl\>\"", "/.", "ptClrs"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"opt", ",", 
+         RowBox[{"sameClr", "\[Rule]", "True"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"drTriDataOpts", "[", 
+      RowBox[{"a", ",", "medData", ",", "\"\<medial\>\"", ",", 
+       RowBox[{"\"\<med\>\"", "/.", "ptClrs"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"opt", ",", 
+         RowBox[{"sameClr", "\[Rule]", "True"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<extouchtri\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FaceForm", "@", "None"}], ",", 
+         RowBox[{"EdgeForm", "@", 
+          RowBox[{"{", 
+           RowBox[{"Thick", ",", 
+            RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}]}], "}"}]}], ",", 
+         RowBox[{"Polygon", "@", "excTps"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<excentral\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FaceForm", "[", "None", "]"}], ",", 
+         RowBox[{"EdgeForm", "[", 
+          RowBox[{"{", 
+           RowBox[{"Thick", ",", 
+            RowBox[{"(", 
+             RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}], ")"}]}], "}"}], "]"}], 
+         ",", 
+         RowBox[{"Polygon", "@", "exc"}], ",", 
+         RowBox[{"(", 
+          RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}], ")"}], ",", 
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"Point", "@", "exc"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<hexyltriangle\>\""}], ",", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "hex", "}"}], ",", 
+         RowBox[{
+          RowBox[{"hex", "=", 
+           RowBox[{"hexylTriangle", "[", 
+            RowBox[{"orbit", ",", "sides"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"FaceForm", "@", "None"}], ",", 
+            RowBox[{"EdgeForm", "[", 
+             RowBox[{"\"\<hex\>\"", "/.", "ptClrs"}], "]"}], ",", 
+            RowBox[{"Polygon", "@", "hex"}], ",", 
+            RowBox[{"PointSize", "@", "Medium"}], ",", 
+            RowBox[{"\"\<hex\>\"", "/.", "ptClrs"}], ",", 
+            RowBox[{"Point", "@", "hex"}]}], "}"}]}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<outernapoleon\>\""}], ",", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "nap", "}"}], ",", 
+         RowBox[{
+          RowBox[{"nap", "=", 
+           RowBox[{"outerNapoleonTriangle", "[", 
+            RowBox[{"orbit", ",", "sides"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"FaceForm", "@", "None"}], ",", 
+            RowBox[{"EdgeForm", "[", 
+             RowBox[{"\"\<nap\>\"", "/.", "ptClrs"}], "]"}], ",", 
+            RowBox[{"Polygon", "@", "nap"}], ",", 
+            RowBox[{"PointSize", "@", "Medium"}], ",", 
+            RowBox[{"\"\<nap\>\"", "/.", "ptClrs"}], ",", 
+            RowBox[{"Point", "@", "nap"}]}], "}"}]}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<morleytriangle\>\""}], ",", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"morley", ",", "c1"}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"morley", "=", 
+           RowBox[{"firstMorleyTriangle", "[", 
+            RowBox[{"orbit", ",", "sides"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"c1", "=", 
+           RowBox[{"getFirstMorleyTrilin", "[", 
+            RowBox[{"orbit", ",", "sides"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"FaceForm", "@", "None"}], ",", 
+            RowBox[{"EdgeForm", "[", 
+             RowBox[{"\"\<nap\>\"", "/.", "ptClrs"}], "]"}], ",", 
+            RowBox[{"Polygon", "@", "morley"}], ",", 
+            RowBox[{"PointSize", "@", "Medium"}], ",", 
+            RowBox[{"\"\<nap\>\"", "/.", "ptClrs"}], ",", 
+            RowBox[{"Point", "@", "morley"}], ",", "Black", ",", 
+            RowBox[{"Point", "@", "c1"}]}], "}"}]}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<orthictriangle\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"EdgeForm", "@", "Black"}], ",", 
+           RowBox[{"FaceForm", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<ort\>\"", "/.", "ptClrs"}], ",", 
+              RowBox[{"Opacity", "@", ".3"}]}], "}"}], "]"}], ",", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{"\"\<feet\>\"", "/.", "orthic"}], "]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"EdgeForm", "[", 
+            RowBox[{"\"\<inc\>\"", "/.", "ptClrs"}], "]"}], ",", 
+           RowBox[{"FaceForm", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Lighter", "@", "Green"}], ",", 
+              RowBox[{"Opacity", "@", ".3"}]}], "}"}], "]"}], ",", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{"\"\<intouch\>\"", "/.", "orthic"}], "]"}], ",", "Gray", 
+           ",", 
+           RowBox[{"Circle", "[", 
+            RowBox[{
+             RowBox[{"\"\<inc\>\"", "/.", "orthic"}], ",", 
+             RowBox[{"\"\<inradius\>\"", "/.", "orthic"}]}], "]"}]}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"FaceForm", "@", "None"}], ",", 
+           RowBox[{"EdgeForm", "@", "Red"}], ",", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{"\"\<intouchOrt\>\"", "/.", "orthic"}], "]"}], ",", "Red",
+            ",", 
+           RowBox[{"Point", "[", 
+            RowBox[{"\"\<intouchOrtInc\>\"", "/.", "orthic"}], "]"}]}], "}"}],
+          ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"PointSize", "@", "Medium"}], ",", 
+           RowBox[{"\"\<ort\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"Point", "[", 
+            RowBox[{"\"\<feet\>\"", "/.", "orthic"}], "]"}], ",", 
+           RowBox[{"PointSize", "@", "Large"}], ",", 
+           RowBox[{"Point", "[", 
+            RowBox[{"\"\<ort\>\"", "/.", "notables"}], "]"}]}], 
+          RowBox[{"(*", 
+           RowBox[{",", 
+            RowBox[{"drawOneNotable", "[", 
+             RowBox[{
+              RowBox[{"\"\<ort\>\"", "/.", "ptClrs"}], ",", 
+              RowBox[{"\"\<ort\>\"", "/.", "notables"}], ",", "\"\<O\>\""}], 
+             "]"}]}], "*)"}], "}"}], ",", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Dashed", ",", "Gray", ",", 
+             RowBox[{"MapThread", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Line", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"#1", ",", "#2"}], "}"}], "]"}], "&"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"orbit", ",", "ortFeet"}], "}"}]}], "]"}]}], "}"}], 
+           ","}], "*)"}], 
+         RowBox[{"{", 
+          RowBox[{"Dashed", ",", "Gray", ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{"#", ",", 
+                RowBox[{"\"\<ort\>\"", "/.", "notables"}]}], "}"}], "]"}], 
+             "&"}], "/@", "orbit"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"PointSize", "@", "Large"}], ",", 
+           RowBox[{"\"\<inc\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"Point", "[", 
+            RowBox[{"\"\<inc\>\"", "/.", "orthic"}], "]"}]}], "}"}]}], "}"}], 
+       ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<experimental\>\""}], ",", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"cir", "=", 
+            RowBox[{"\"\<cir\>\"", "/.", "notables"}]}], ",", "rad", ",", 
+           "equi", ",", "xfeus", ",", "xfeusCir", ",", "xtpsCir", ",", 
+           "cirClr", ",", "medsCir"}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"cirClr", "=", 
+           RowBox[{"\"\<cir\>\"", "/.", "ptClrs"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"rad", "=", 
+           RowBox[{"\"\<cirRadius\>\"", "/.", "notables"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"xfeus", "=", 
+           RowBox[{"(", 
+            RowBox[{"\"\<feus\>\"", "/.", "excCircleData"}], ")"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"equi", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"cir", "+", "#"}], ")"}], "&"}], "/@", 
+            RowBox[{"(", 
+             RowBox[{"rad", " ", 
+              RowBox[{"getEquilateral", "[", "0.", "]"}]}], ")"}]}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"xfeusCir", "=", 
+           RowBox[{"getCircumcenter", "@@", "xfeus"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"xtpsCir", "=", 
+           RowBox[{"getCircumcenter", "@@", "excTps"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"medsCir", "=", 
+           RowBox[{"getCircumcenter", "@@", "medians"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"FaceForm", "@", "None"}], ",", 
+            RowBox[{"PointSize", "@", "Large"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"cirClr", ",", 
+              RowBox[{"EdgeForm", "@", "cirClr"}], ",", 
+              RowBox[{"Polygon", "@", "equi"}], ",", 
+              RowBox[{"Polygon", "[", 
+               RowBox[{"flipX", "/@", "equi"}], "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}], ",", 
+              RowBox[{"Point", "@", "xtpsCir"}], ",", "Dashed", ",", "Thick", 
+              ",", 
+              RowBox[{"Circle", "[", 
+               RowBox[{"xtpsCir", ",", 
+                RowBox[{"magn", "[", 
+                 RowBox[{
+                  RowBox[{"excTps", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "-", "xtpsCir"}], "]"}]}], 
+               "]"}]}], "}"}]}], "}"}]}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"(*", "quadrangles", "*)"}], 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<quadcirx100\>\""}], ",", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"vtx", ",", "malts"}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"vtx", "=", 
+           RowBox[{"orderVertices", "[", 
+            RowBox[{
+             RowBox[{"Prepend", "[", 
+              RowBox[{"orbit", ",", 
+               RowBox[{"\"\<antifeu\>\"", "/.", "notables"}]}], "]"}], ",", 
+             RowBox[{"\"\<mit\>\"", "/.", "notables"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"malts", "=", 
+           RowBox[{"getMaltitudes", "[", "vtx", "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"FaceForm", "@", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\"\<cir\>\"", "/.", "ptClrs"}], ",", 
+               RowBox[{"Opacity", "@", ".1"}]}], "}"}]}], ",", 
+            RowBox[{"EdgeForm", "@", 
+             RowBox[{"{", 
+              RowBox[{"Thick", ",", 
+               RowBox[{"\"\<cir\>\"", "/.", "ptClrs"}]}], "}"}]}], ",", 
+            RowBox[{"Polygon", "@", "vtx"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"Dashed", ",", 
+              RowBox[{"\"\<cir\>\"", "/.", "ptClrs"}], ",", 
+              RowBox[{"Line", "/@", 
+               RowBox[{"malts", "[", "\"\<lines\>\"", "]"}]}]}], "}"}]}], 
+           "}"}]}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<quadactpsx100\>\""}], ",", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"vtx", ",", "malts"}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"vtx", "=", 
+           RowBox[{"orderVertices", "[", 
+            RowBox[{
+             RowBox[{"Prepend", "[", 
+              RowBox[{
+               RowBox[{"actData", "[", "\"\<tps\>\"", "]"}], ",", 
+               RowBox[{"\"\<antifeu\>\"", "/.", "notables"}]}], "]"}], ",", 
+             RowBox[{"actData", "[", "\"\<inc\>\"", "]"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"malts", "=", 
+           RowBox[{"getMaltitudes", "[", "vtx", "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"FaceForm", "@", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\"\<anticompl\>\"", "/.", "ptClrs"}], ",", 
+               RowBox[{"Opacity", "@", ".1"}]}], "}"}]}], ",", 
+            RowBox[{"EdgeForm", "@", 
+             RowBox[{"{", 
+              RowBox[{"Thick", ",", 
+               RowBox[{"\"\<anticompl\>\"", "/.", "ptClrs"}]}], "}"}]}], ",", 
+            RowBox[{"Polygon", "@", "vtx"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"Dashed", ",", 
+              RowBox[{"\"\<anticompl\>\"", "/.", "ptClrs"}], ",", 
+              RowBox[{"Line", "/@", 
+               RowBox[{"malts", "[", "\"\<lines\>\"", "]"}]}]}], "}"}]}], 
+           "}"}]}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"(*", "points", "*)"}], 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<baricenter\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<bar\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<bar\>\"", "/.", "notables"}], ",", 
+           "\"\<Subscript[B, 2]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<incenter\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<inc\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<inc\>\"", "/.", "notables"}], ",", 
+           "\"\<Subscript[I, 1]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<circumcenter\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<cir\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<cir\>\"", "/.", "notables"}], ",", 
+           "\"\<Subscript[C, 3]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<orthocenter\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<ort\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<ort\>\"", "/.", "notables"}], ",", 
+           "\"\<Subscript[H, 4]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<intouchpts\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"\"\<inc\>\"", "/.", "ptClrs"}], ",", 
+         RowBox[{"Point", "[", 
+          RowBox[{"\"\<tps\>\"", "/.", "notables"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<medians\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<med\>\"", "/.", "ptClrs"}], ",", 
+         RowBox[{"PointSize", "@", "Medium"}], ",", 
+         RowBox[{"Point", "@", "medians"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<nagel\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<nag\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<nag\>\"", "/.", "notables"}], ",", 
+           "\"\<Subscript[N, 8]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<gergonne\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<ger\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<ger\>\"", "/.", "notables"}], ",", 
+           "\"\<Subscript[Ge, 7]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<bevanpt\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<bev\>\"", "/.", "ptClrs"}], ",", "x40", ",", 
+           "\"\<Subscript[X, 40]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<x142\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<dar\>\"", "/.", "ptClrs"}], ",", "x142", ",", 
+           "\"\<Subscript[T, 142]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<x168\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<x88\>\"", "/.", "ptClrs"}], ",", "x168", ",", 
+           "\"\<Subscript[X, 168]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<x88\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"\"\<x88\>\"", "/.", "ptClrs"}], ",", 
+         RowBox[{"Point", "@", "x88"}], ",", 
+         RowBox[{"ellLabelTxt", "[", 
+          RowBox[{"a", ",", "x88", ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Subscript[X, 88]\>\"", ",", "16"}], "]"}], ",", 
+           ".1"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{"not", " ", "implemented"}], "*)"}], 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<x88complex\>\""}], ",", 
+       RowBox[{"drawX88complex", "[", 
+        RowBox[{
+        "a", ",", "orbit", ",", "normals", ",", "notables", ",", "lgt"}], 
+        "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<feuerbach\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<feu\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<feu\>\"", "/.", "notables"}], ",", 
+           "\"\<Subscript[F, 11]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<mittenpunkt\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\"\<mit\>\"", "/.", "ptClrs"}], ")"}], ",", 
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"Point", "[", 
+          RowBox[{"\"\<mitten\>\"", "/.", "excCircleData"}], "]"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+           RowBox[{"\"\<mit\>\"", "/.", "ptClrs"}], ",", 
+           RowBox[{"\"\<mitten\>\"", "/.", "excCircleData"}], ",", 
+           "\"\<Subscript[M, 9]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"OptionValue", "@", "\"\<extouchpts\>\""}], "&&", 
+        RowBox[{"OptionValue", "@", "\"\<excircles\>\""}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}], ")"}], ",", "Dashed", ",", 
+         "Thick", ",", 
+         RowBox[{"MapThread", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Line", "@", 
+             RowBox[{"{", 
+              RowBox[{"#1", ",", "#2"}], "}"}]}], "&"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"exc", ",", "excTps"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<extouchptlabels\>\""}], ",", 
+       RowBox[{"MapThread", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"drawOneNotable", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}], ")"}], ",", "#1", ",", 
+            "#2"}], "]"}], "&"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"excTps", ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Subscript", "[", 
+              RowBox[{"\"\<t\>\"", ",", "#"}], "]"}], "&"}], "/@", 
+            RowBox[{"{", 
+             RowBox[{"\"\<12\>\"", ",", "\"\<23\>\"", ",", "\"\<31\>\""}], 
+             "}"}]}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<mittenfeet\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\"\<mit\>\"", "/.", "ptClrs"}], ")"}], ",", 
+         RowBox[{"Thickness", "@", "Medium"}], ",", "Dashed", ",", 
+         RowBox[{"MapThread", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{"#1", ",", "#2"}], "}"}], "]"}], "&"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"exc", ",", 
+             RowBox[{"\"\<mittenFeet\>\"", "/.", "excCircleData"}]}], "}"}]}],
+           "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<extouchpts\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\"\<exc\>\"", "/.", "ptClrs"}], ")"}], ",", 
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"Point", "@", "excTps"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<antifeuerbach\>\""}], ",", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"antifeu", ",", "nfeu"}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"antifeu", "=", 
+           RowBox[{"\"\<antifeu\>\"", "/.", "notables"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"nfeu", "=", 
+           RowBox[{"norm", "@", 
+            RowBox[{"ellGrad", "[", 
+             RowBox[{"a", ",", 
+              RowBox[{"Sequence", "@@", "antifeu"}]}], "]"}]}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"PointSize", "@", "Large"}], ",", 
+            RowBox[{"\"\<feu\>\"", "/.", "ptClrs"}], ",", 
+            RowBox[{"Point", "@", "antifeu"}], ",", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{
+                RowBox[{"OverBar", "[", "\"\<Subscript[F, 100]\>\"", "]"}], 
+                ",", "16"}], "]"}], ",", 
+              RowBox[{"ray", "[", 
+               RowBox[{"antifeu", ",", 
+                RowBox[{"-", "nfeu"}], ",", 
+                RowBox[{".5", "*", "lgt"}]}], "]"}]}], "]"}]}], "}"}]}]}], 
+        "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "@", "\"\<darbouxpt\>\""}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Dashed", ",", 
+         RowBox[{"PointSize", "@", "Large"}], ",", 
+         RowBox[{"\"\<dar\>\"", "/.", "ptClrs"}], ",", 
+         RowBox[{"drawOneNotable", "[", 
+          RowBox[{
+          "Red", ",", "x144", ",", "\"\<Subscript[D, 144]\>\"", ",", "0", ",", 
+           RowBox[{"-", "1.5"}], ",", "16"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{"hasMoses", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "@", "Large"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"showMosesPts", "[", 
+          RowBox[{"a", ",", "mosesPts", ",", "\[IndentingNewLine]", 
+           RowBox[{"drPeterMoses1k", "\[Rule]", 
+            RowBox[{"mosesOpts", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{"drPeterMosesAbove1k", "\[Rule]", 
+            RowBox[{"mosesOpts", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{"drPeterMosesAbove4k", "\[Rule]", 
+            RowBox[{"mosesOpts", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{"labelDist", "\[Rule]", ".1"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.771416509796406*^9, 3.7714165200835123`*^9}, {
+  3.7714166674083366`*^9, 3.771416670207825*^9}}]
+},
+WindowSize->{1264, 661},
+WindowMargins->{{444, Automatic}, {Automatic, 85}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 34869, 869, 1712, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

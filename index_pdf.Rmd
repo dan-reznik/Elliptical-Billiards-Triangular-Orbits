@@ -1,0 +1,22 @@
+--- 
+title: "New Properties of Triangular Orbits in Elliptic Billiards"
+author: "Dan Reznik, Ronaldo Garcia, Jair Koiller"
+date: "Last update: `r lubridate::with_tz(Sys.time(),tzone='Brazil/East')`"
+output:
+  bookdown::pdf_document2:
+    toc: false
+    latex_engine: xelatex
+    keep_tex: true
+    includes:
+      in_header: style.sty
+link-citations: yes
+bibliography: ["elliptic_billiards_v2.bib","media.bib"]
+csl: chicago-author-date-modif-notes.csl
+---
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
+```
+
+```{r test-main, child="index_expositional.Rmd"}
+```

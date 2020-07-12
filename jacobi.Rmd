@@ -1,0 +1,21 @@
+# Appendix: Did Jacobi think of the billiard to show Poncelet's Porism?
+
+It was a cold starry Friday night in Könisberg, 28 of December 1838. Karl-Gustav Jacobi was writing a note to Friedrich Wilhelm Bessel, the leading astronomer of Prussia, twenty years his senior, boasting:
+
+>The day before yesterday, I reduced to quadrature the problem of geodesic lines on an ellipsoid with three unequal axes. They are the simplest formulas in the world, Abelian integrals, which become the well-known elliptic integrals if 2 axes are set equal. [@wp_geodesics]
+
+The short paper he published [@Jacobi1] is said to mark the birth of *Integrable Hamiltonian Systems*. He further developed his ideas, now called the Hamilton-Jacobi method, in the 1842-3 winter lectures [@Jacobivorlesungen]. A few years later, Carl Neumann [@Neumann1859] and others  found other special yet interesting mechanical problems solvable by separation of variables.
+
+Had Jacobi made the smaller axis of the ellipsoid go to zero, he would have gotten an explicit integration of the elliptic billiard, in planar confocal coordinates, exactly the same Euler used for his solution to the fixed two centers' problem. But Jacobi did not care about doing it. Most likely what he wanted was to impress his mentor, which was also a geodesist, and of course Gauss, who could only find geodesics for an ellipsoid of revolution.
+
+At that time mathematicians could not justify an addiction to *billiards*. This changed  after Birkhoff's Acta Mathematica 1927 paper [@Birkhoff1927], where he further developed geometric ideas from Poincaré.
+
+Ten years before the starry night where he found the geodesic curves of the triaxial ellipsoid, Jacobi was developing the foundations of elliptic functions. He then published a paper [@Jacobi2], where he used addition properties of his (then) new functions on two geometric problems: Steiner's and Poncelet's Porisms.?
+
+## Integrable Systems are Porismatic
+
+It is common knowledge that an $n$-degree-of-freedom Hamiltonian system is *integrable* if one can always find local coordinates $(I_1, \cdots, I_n, \theta_1, \cdots \theta_n), \,  \theta_i  \equiv \theta_i + 2\pi$ in which the Hamiltonian becomes only a function of the $I_j$. The coordinates are known as *action angles* and the $I_j$'s are constants of motion.
+
+Trajectories wind invariant tori (called Lagrangian) with frequencies  $\omega_j = \partial H/\partial I_j$. For $n$=2, if the ratio  $\omega_1 / \omega_2 = p/q$ is rational, the torus is called *resonant* because all trajectories are periodic and of the same period. Taking $(p,q)=1$, the fundamental period $T = 2\pi p/\omega_1 = 2\pi q/\omega_2$. They all wind around  $p$ times in  $\theta_1$ and $q$ times in   $\theta_2$.
+
+If this is not a *Porism*, what is? Most frequency pairs  $\left(\omega_1,\omega_2\right)$ are not rationally related, but if a single trajectory is closed, all others in the same torus will also be closed, with the *same* period. Trajectories in an elliptic billiard are polygonal, but they  are in fact projections of winding curves in Lagrangian tori. The nice coordinates for this problem are the confocal conic coordinates. Poncelet's Porism can be derived as a consequence of the fact that any pair of conics, say two nested ellipses, can be obtained by a projective transformation from two confocal ones. The oldest reference we found was [@darboux1870]. Darboux attributes to Chasles the proof that all closed trajectories of the same type have the same length. But as we saw this is also an immediate consequence of integrability.

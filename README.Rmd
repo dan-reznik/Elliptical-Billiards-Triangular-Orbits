@@ -1,0 +1,28 @@
+---
+title: "Invariants of N-Periodics in an Elliptic Billiard"
+output: github_document
+---
+
+```{r,echo=F}
+knitr::opts_chunk$set(
+  cache=T,
+  collapse=T,
+  comment="#>",
+  dpi=300,
+  fig.align="center",
+  out.width='100%'
+)
+```
+
+Joint exploration of Dan Reznik, Ronaldo Garcia, and Jair Koiller.
+
+```{r,out.width="50%",fig.align="center",echo=F}
+knitr::include_graphics("pics/ronaldo_dan_jair_impa_31-jul-2019.png")
+```
+
+- [Media](https://dan-reznik.github.io/Elliptical-Billiards-Triangular-Orbits/videos.html) page
+- [Expositional](https://dan-reznik.github.io/Elliptical-Billiards-Triangular-Orbits/) page.
+
+
+***
+Last update: `r lubridate::with_tz(Sys.time(),tzone='Brazil/East')`

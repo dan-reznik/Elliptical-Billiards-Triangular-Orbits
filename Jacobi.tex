@@ -1,0 +1,236 @@
+\documentclass[11pt]{article}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\begin{document}
+
+\section*{Integrable systems yield  porisms} % :  resonant tori} 
+
+It is common knowledge  that  a $n$-degrees of freedom Hamiltonian system    is {\it integrable} if  one can  find, around any point,  local  coordinates (local, but not so much)  $(I_1, \cdots, I_n, \theta_1, \cdots \theta_n), \,  \theta_i  \equiv \theta_i + 2\pi$,  called {\it action-angle}, in which the Hamiltonian becomes
+ only a function of the $I_j$,  which are then  constants of motion. \\
+ 
+ Trajectories wind invariant tori  (called Lagrangian) with frequencies  $\omega_j = \partial H/\partial I_j$. 
+In two degrees of freedom, when  the ratio  $\omega_1/\omega_2 =  p/q   $    is rational, 
+all the orbits  in  such a `resonant  torus' are periodic,  and they all  have the same period.   Taking $(p,q)=1$, the fundamental period $T = 2\pi p/\omega_1 =   2\pi q/\omega_2$. 
+They all wind around  $p$ times in  $\theta_1$   and  $q$ times in   $\theta_2$.\\
+
+
+If this   is not a {\it porism}, what  is?   Most frequency pairs  $(\omega_1, \omega_2) $ are not rationally related,  but if  a single  trajectory is closed, all others in the same torus will  also be closed, with the {\it same} period.\\
+
+As it is well known, the  elliptical billiard is  an integrable Hamiltonian system.     In the physical plane the trajectories are bouncing straight rays, but   they  are in fact   projections of  winding curves in  Lagrangian tori.   
+The nice coordinates for this problem are the confocal conic coordinates. One obtains  two possible regimes, separated by  trajectories that  pass  through the foci. Caustics are confocal ellipses or hyperbolae depending on the regime.  \\
+
+
+% As pointed out in several places (see eg.   \cite{Dragovic}, \cite{Tabashnikov...})
+ {\it  Poncelet's porism}  can be derived as a  consequence of the fact that any pair of conics, say two  nested ellipses,
+can be obtained by a projective transformation from  two confocal ones.  The oldest reference we found is  Darboux \cite{Darboux}, 1870.  He atributes to Chasles the proof that the all closed trajectories of the same type have the same length. But this is also an immediate consequence of integrability.   Fix  the energy,  corresponding to unit velocity.  Then  $L=T$, a common value o all.   As we   discuss in the historical note, it would be probably evident  to Jacobi.   %, had him cared about billiards.
+
+            
+
+\newpage
+
+$$
+$$
+Include or not? The famous figures in the elliptical biliard, resonant vs. nonresonant
+$$
+$$
+
+\newpage
+
+\section{Our experiments: summary} % triangles on the elliptical  billiard}
+ 
+We report here some of the dynamic experiments with  the elliptical billiard  we have been doing.    We take the simplest case of  frequency ratio  1:3, % $1:3$, 
+ the triangular trajectories.   The reader is invited to exert his/hers imagination to imagine this family of  triangles  (video1) as winding  curves in the Lagrange torus in four space.     For short we call  any  triangle  in this family   a  {\it  triangle orbit}.  A  triangle orbit with vertices $A,B,C$ is determined by the position of  one of its vertices, say $A$.  As one runs $A$  once around the ellipse,   the  triangle orbit appears three times.\\
+ 
+One may not know this:  for any triangle one can associate more than  $ 40,000^+ $  points, called {\it triangle centers}!  They must be well defined under Euclidian motions and similitudes.  Of course, three of them are the barycenter, the incenter and the circumcenter,  that one
+learns about in high school.   Some of the triangle centers, such as the barycenter, are projectively well defined,  but most aren't.   An enciclopaedia of the  {\it triangle centers} was produced by Kimberling \cite{Kimberling}. See also  \cite{eric}.\\
+
+Our project is the following:  fix  an  elliptical billiard by the ratio  $a:b$ of the ellipse axis, say with $b=1, a>1$.    As one varies  the triangle orbits,   how does each and every one of their  triangle centers  move?  Which of the resulting  curves are in some sense special?    Are there interesting bifurcations are $a$ varies?
+ 
+ 
+
+\newpage
+
+\section*{Historical notes}
+
+\subsection*{The birth of integrable systems, and a missed opportunity} 
+\noindent   It  was probably a   cold  but a starry Friday  night in K\"onisberg.   A hundred years before Euler  was  jaywalking  around its seven bridges\footnote{Now  Kalingrad, 
+with less bridges,   his problem has a solution.}. It was 28 December 1838, just a few days after Christmas.   But  Carl Gustav Jacob Jacobi  felt warm.   He was writing  
+% in finding a coordinate system in the triaxial ellipsoid in which the geodesic equations 
+%that the geodesics of the triaxial ellipsoid could be explicitly found by quadratures. Two days latter 
+  a note to his twenty year older colleague,  Friedrich Wilhelm Bessel,   the leading  astronomer of  %and geodesist of 
+ Prussia:
+%,   boasting:
+
+ \begin{quote}
+``The day before yesterday, I reduced to quadrature the problem of geodesic lines on an ellipsoid with three unequal axes. They are the simplest formulas in the world, Abelian integrals, which become the well known elliptic integrals if 2 axes are set equal ". 
+\end{quote}
+%(December 28 1838;  quoted from 
+%wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Geodesics_on_an_ellipsoid#Geodesics_on_a_triaxial_ellipsoid}}).
+
+The short paper he published    in Crelle's journal  \cite{Jacobi1, Jacobi2}  is said to mark the birth of the theory  of  {\it  integrable Hamiltonian systems}.   He  further developed the ideas,  now called the Hamilton-Jacobi method in his 1842-1843 winter lectures (Vorlesungen \cite{Jacobivorlesungen}).   Not much later, Neumann (\cite{Neumann}, 1859)  and others  found some special yet interesting mechanical problems solvable by separation of variables.\\
+
+%We will come back to {\it porisms} in a moment, but let's keep in the track.  
+Had Jacobi made the smaller axis of the ellipsoid  go to zero, he would have gotten an  explicit integration of the elliptic billiard,  in planar confocal  coordinates, exactly  the same   Euler used for his solution of the fixed two centers problem \cite{Euler}. 
+But Jacobi  did not care about doing it. Most likely what he  wanted  was to impress his mentor, which was also a  geodesist, and of course Gauss, who did  only find   geodesics for an  ellipsoid of revolution. \\
+
+[ At his time  mathematicians could  not justify   an addiction to {\it billiards}.   This     changed  after Birkhoff's  Acta Mathematica 1927 paper \cite{Birkhoff1927} and his book \cite{Birkhoff}. Playing pools is now   a respectable  endeavour \cite{Tabashnikovbook}.  
+    Birkhoff,   an analyst by heart, somewhat contradictorily   further  developed the {\it qualitative methods} introduced by Poincar\'e in his studies about the three body problem. ] \\
+  
+  Ten years before the  starry night where he  found the geodesic curves of the triaxial ellipsoid,   Jacobi  was  developing the foundations of elliptic functions. He then published a paper \cite{Jacobi2}, where
+he  used the  the addition properties of his (then) new functions on two geometric problems - the porism by Steiner and specially that of Poncelet.  Modern lgebraic geometry owes al lot to Poncelet  and Jacobi.  \\
+
+It is curious that ten years latter Jacobi did not   think of the billiard to revisit Poncelet's porism.
+  
+
+    
+  \subsection*{Digression. The Liouville-Arnold theorem and KAM theory}
+
+For quite a long time, in the eighteen and nineteen centuries, astronomers  were essentially producing by brute force a lot of integrable systems in order to approximate   complicated celestial mechanics  problems. \\
+
+ Some perceived the difference  of resonant vs nonresonant invariant tori when their integrable systems were perturbed.   But it
+ is perhaps fair to say that few people before Poincar\'e\footnote{Perhaps Lagrange himself? History is hard!}   thought geometrically of the phase space of   Hamiltonian systems as  one does now. \\
+ 
+ Poincar\'e  agonized when a ``resonant    mistake''  was pointed out in his original King Oscar prize paper.  In fixing the mistake he unveiled the causes of chaotic behavior in Hamiltonian systems:  what happens when perturbations destroy the resonant tori.   He certainly  guessed KAM theory,  which shows the robustness of sufficiently  nonresonant tori under small perturbations  (\cite{Chenciner 1}, section 2.6; \cite{Chenciner2}).\\
+
+But what is an integrable system and KAM theory after all? In   a two page note   Liouville (\cite{Liouville}, 1855)  explained that for a  n-degrees of freedom Hamiltonian system,     integrability results from the existence of n  independent functions  all whose Poisson brackets vanish.  Liouville's result was revisited by Mineur in 1935 \cite{Mineur}   for use in Bohr-Sommerfeld quantization.  But it was  in Arnold and Avez book  \cite{ArnoldAvez}  that the fundamental nature of the result was clearly stated.  We feel sorry for Mineur.\\
+
+
+In the early 1960's Arnold developed  perturbation methods outlined by his youth mentor Kolmogorov.  Roughly, the idea was to use the
+frequencies as the independent quantities instead of the actions. This become known as KAM theory. \\
+
+ M is for Moser, who independently studied specially the two degrees of freedom situation.  Moser recounted  a bit of it in his ``cult article'' ({\it Is the solar system stable?},   \cite{Moser})  that appeared  in the first issue of Math. Intelligencer.  \\
+ 
+  Looking up the story would lead as  astray, but  we can refer to \cite{story}.     
+ 
+
+
+
+
+
+\newpage 
+
+\begin{figure}[b]
+\centering
+\includegraphics[scale=0.4]{letterjacobi-bessel.png}
+%\caption[Matrioscas]{https://www.fromrussia.com/russian-dolls/nesting-dolls-matryoshkas}
+\label{fig:letter}
+\end{figure} 
+\bibliography{referenciasjair} 
+\bibliographystyle{ieeetr}
+
+
+% \end{quote} 
+
+% http://thebestbilliards.com/index.php
+
+
+\end{document}
+
+tp://olivernash.org/2018/07/08/poring-over-poncelet/
+
+https://en.wikipedia.org/wiki/Jean-Victor_Poncelet 1788 – 22 December 1867
+
+
+https://en.wikipedia.org/wiki/Feuerbach_point
+
+https://en.wikipedia.org/wiki/Karl_Wilhelm_Feuerbach
+
+
+https://en.wikipedia.org/wiki/Nagel_point
+
+https://en.wikipedia.org/wiki/Christian_Heinrich_von_Nagel
+
+https://en.wikipedia.org/wiki/Triangle_center
+
+--
+
+
+https://en.wikipedia.org/wiki/University_of_Königsberg
+
+https://en.wikipedia.org/wiki/Seven_Bridges_of_Königsberg
+
+
+December 28 1838
+
+The day before yesterday, I reduced to quadrature the problem of geodesic lines on an ellipsoid with three unequal axes. They are the simplest formulas in the world, Abelian integrals, which become the well known elliptic integrals if 2 axes are set equal.
+
+Königsberg, 28th Dec. '38.  It was a Friday.
+
+https://en.wikipedia.org/wiki/Königsberg
+(Few traces of the former Königsberg remain today. After 1945 Kaliningrad.
+https://en.wikipedia.org/wiki/University_of_Königsberg
+https://en.wikipedia.org/wiki/Carl_Gustav_Jacob_Jacobi    1804-1851
+https://en.wikipedia.org/wiki/Friedrich_Bessel
+
+
+https://en.wikipedia.org/wiki/Geodesics_on_an_ellipsoid#Geodesics_on_a_triaxial_ellipsoid
+
+page 385  Gesammelte werke, Volume 7
+
+Carl Gustav Jakob Jacobi
+G. Reimer, 1891
+
+----
+
+OK REFERENCIADOS
+Jacobi, C. G. J. (1839). "Note von der geodätischen Linie auf einem Ellipsoid und den verschiedenen Anwendungen einer merkwürdigen analytischen Substitution" [The geodesic on an ellipsoid and various applications of a remarkable analytical substitution]. Journal für die Reine und Angewandte Mathematik (Crelles Journal) (in German). 19 (19): 309–313. doi:10.1515/crll.1839.19.309. 
+Letter to Bessel, Dec. 28, 1838. French translation (1841).
+
+JACOBI
+De la ligne géodésique sur un ellipsoïde, et des différents usages d’une transformation analytique remarquable.
+Journal de mathématiques pures et appliquées 1re série, tome 6 (1841), p. 267-272.
+available at http://sites.mathdoc.fr/JMPA/PDF/JMPA_1841_1_6_A20_0.pdf
+
+Journal für die reine und angewandte Mathematik, Volume 19, 1839
+editado por Carl Wilhelm Borchardt, Leopold Kronecker, Lazarus Fuchs, Kurt Wilhelm Sebastian Hensel, Helmut Hasse
+
+------
+
+
+Jacobi and Poncelet
+http://www.numdam.org/item/AFST_2013_6_22_2_353_0/
+We give an exposition of unpublished fragments of Gauss where he discovered (using a work of Jacobi) a remarkable connection between Napier pentagons on the sphere and Poncelet pentagons on the plane. As a corollary we find a parametrization in elliptic functions of the classical dilogarithm five-term relation.
+
+--
+https://link.springer.com/article/10.1007/BF02924855
+Rendiconti del Seminario Matematico e Fisico di Milano
+December 1985, Volume 54, Issue 1, pp 145–158 | Cite as
+The closure theorem of Poncelet
+Authors
+Authors and affiliations
+H. J. M. Bos
+
+A report on a joint study together with C. Kers, F. Oort and D. W. Raven on historical and mathematical aspects of Poncelet's closure theorem. Proofs of the theorem by Griffiths (1976), Jacobi (1828) and Poncelet himself (1822) are discussed and a new result is reported concerning a certain one-parameter family of curves. This family of curves arises naturally from arguments in Poncelet's original proof and it offers an interesting case of strong non-commutativity of dualizing and specializing.
+
+--
+
+https://link.springer.com/chapter/10.1007%2F978-3-0348-5438-2_53
+http://dx.doi.org/10.1007/978-3-0348-5438-2_53
+Schoenberg, I. J. (1983). On Jacobi-Bertrand’s proof of a Theorem of Poncelet. Studies in Pure Mathematics, 623–627. doi:10.1007/978-3-0348-5438-2_53 
+
+O. Nash says G-Harris proof is the same as Jacobi's!
+
+Jacobi's elliptic functions and criptography!
+
+--
+
+https://arxiv.org/abs/1202.0002
+A vector bundle proof of Poncelet theorem
+
+Jean Vallès (LMA-PAU)
+(Submitted on 31 Jan 2012)
+In the town of Saratov where he was prisonner, Poncelet, continuing the work of Euler and Steiner on polygons simultaneously inscribed in a circle and circumscribed around an other circle, proved the following generalization : "Let C and D be two smooth conics in the projective complex plane. If D passes through the n(n-1)/2 vertices of a complete polygon with n sides tangent to C then D passes through the vertices of infinitely many such polygons." According to Marcel Berger this theorem is the nicest result about the geometry of conics. Even if it is, there are few proofs of it. To my knowledge there are only three. The first proof, published in 1822 and based on infinitesimal deformations, is due to Poncelet. Later, Jacobi proposed a new proof based on finite order points on elliptic curves; his proof, certainly the most famous, is explained in a modern way and in detail by Griffiths and Harris. In 1870 Weyr proved a Poncelet theorem in space (more precisely for two quadrics) that implies the one above when one quadric is a cone; this proof is explained by Barth and Bauer. Our aim in this short note is to involve vector bundles techniques to propose a new proof of this celebrated result. Poncelet did not appreciate Jacobi's for the reason that it was too far from the geometric intuition. I guess that he would not appreciate our proof either for the same reason.
+
+
+
+In 2011 we uploaded a video to youtube about an obscure phenomenon:
+the incenter of 3-periodic (triangular) orbits in an elliptic billiard
+has an elliptic locus. During the next few years the video was watched
+by a few billiard experts, and proofs were published about it. In
+early 2019 we created a webpage to summarize their findings which led
+to a 2-week frenzy of visual experiments where we stumbled upon 5 new
+amazing properties of 3-periodic orbits, including unknown invariants
+and a stationary point. In this talk we will explore them, as well as
+advocate visual experimentation as an important tool for mathematical
+discovery.

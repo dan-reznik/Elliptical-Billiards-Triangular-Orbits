@@ -1,0 +1,336 @@
+---
+title: "Elliptical Billiards: Triangular Orbits"
+author: Dan S. Reznik
+date: April, 2019
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: false
+    theme: united
+    df_print: paged
+    highlight: tango
+    code_folding: show
+---
+
+Source files available [here](https://github.com/dan-reznik/Elliptical-Billiards-Triangular-Orbits)
+
+```{r,echo=F}
+knitr::opts_chunk$set(
+  cache=T,
+  collapse=T,
+  comment="#>",
+  dpi=96,
+  out.width='100%'
+)
+```
+
+### Load packages
+
+```{r,message=F}
+library(tidyverse)
+#library(gganimate)
+# library(magrittr)
+library(assertthat)
+library(glue) # for string interpolation
+library(magick) # for building animation
+library(furrr) # for parallel processing
+library(tictoc)# for timing
+source("./util.R") # geom utilities, see repo
+```
+
+## Shape of error function
+
+Note: goes to zero as $t$ approaches $\pi/2$, because ray-trace path is shrinking. 
+
+```{r}
+draw_error <- function(a,t) {
+  p0 <- ell_p(a,t)
+  n0 <- ell_n(a,t)
+  df <- tibble(th=seq(-.99*pi/2,0,pi/500),
+                   tr=map(th,tri_angle2,a=a,p=p0,norm=n0),
+                   d2=map_dbl(tr,"d2")%>%sqrt,
+                   d_adj=map_dbl(tr,"d_adj")) %>%
+    select(-tr)
+  
+  df %>%
+    gather("key","value",d2,d_adj) %>%
+    ggplot(aes(th,value,group=key,color=key)) +
+    geom_line()
+}
+
+draw_error(2,pi/4)
+```
+
+### Optimization functions
+
+```{r}
+# tri_angle_d2 <- function(th,a,p,norm) tri_angle2(th,a,p,norm)$d2
+tri_angle_d_adj <- function(th,a,p,norm) tri_angle2(th,a,p,norm)$d_adj
+opt_th <- function(a,p,norm,tol=1e-4)
+optimize(tri_angle_d_adj,
+         interval=c(-.99,-.05)*pi/2, # there's a direct back-and-forth hit at t in 8~9 degrees
+         tol=tol,a=a,p=p,norm=norm)
+# global
+#opt_th_global <- function(a,p,norm,tol=1e-4) optim(c(-.99*pi/2,0),function(x) #tri_angle_d_adj(x,a=a,p=p,norm=norm),method="BFGS")
+```
+
+Calculate optimum $\theta$ for this triangle
+
+```{r,include=F}
+opt_th(2,ell_p(2,pi/4),ell_n(2,pi/4))
+```
+
+Investigate optimum $\theta$ for various values of $t$ from -90 to 0 degrees
+
+```{r}
+df_opt_th <- tibble(t=seq(-90,90,.5),
+                        opt_th=map(t%>%to_rad,
+                                   ~opt_th(2,ell_p(2,.x),ell_n(2,.x)))) %>%
+  mutate(min=map_dbl(opt_th,"minimum"),
+         obj=map_dbl(opt_th,"objective")) %>%
+  select(-opt_th)
+
+df_opt_th %>%
+  gather("key","value",min,obj) %>%
+  ggplot(aes(t,value,group=key,color=key)) +
+  geom_line()
+```
+
+Some values are causing minimizer to be unstable
+
+```{r}
+summary(df_opt_th)
+```
+
+Values are between 8 and 9 degrees
+
+```{r}
+df_opt_th%>%filter(obj>.001)
+```
+
+```{r}
+draw_error(2,8%>%to_rad)
+```
+
+### Get optimum triangle
+
+```{r}
+get_opt_tri <- function(t_deg,a) {
+  t <- t_deg %>% to_rad
+  p <- ell_p(a,t)
+  n <- ell_n(a,t)
+  opt_th <- opt_th(a,p,n)
+  tri_angle_df(opt_th$minimum,a,p)
+}
+```
+
+## Orbit perimeter is constant but area is not
+
+```{r}
+df_per_area <- tibble(t=seq(0,359,5),
+                      tris=t%>%map(get_opt_tri,a=2),
+                      sides=tris%>%map(get_tri_sides),
+                      per=sides%>%map_dbl(get_tri_per),
+                      area=sides%>%map_dbl(get_tri_area))
+
+df_per_area %>%
+  mutate(per) %>%
+  gather(key,value,per,area) %>%
+  ggplot(aes(t,value,group=key,color=key)) +
+  geom_line(size=1) + 
+  scale_y_log10(breaks=scales::log_breaks(10))
+```
+
+```{r,echo=F}
+ggsave("pics/perimeter_area.png",width=7,height=3.5)
+```
+
+Fixed point on boundary, vary output angle wrt normal
+
+```{r}
+show_variable_angle <- function(a=2,t_deg=45,
+                                th_min=-52,th_max=-50,th_step=.5) {
+  t <- t_deg %>% to_rad
+  p = ell_p(a,t)
+  n = ell_n(a,t)
+  n_tip = p + n*.1
+  arrow15 <- arrow(angle = 15, type = "closed",length=unit(10,"points"))
+
+  df_ell <- tibble(th = seq(th_min,th_max,th_step),
+                       tri_angle = th %>% to_rad %>%
+                         map(~tri_angle_df(.x,a,p,n))) %>%
+    unnest(tri_angle) # expands to the side!
+  
+  # Animate
+  
+  df_ell %>%
+    ggplot() +
+    # background
+    geom_point(x=0,y=0) +
+    geom_path(aes(px,py),data=ell_poly(a)) +
+    #geom_segment(x=p[1],y=p[2],
+    #             xend=n_tip[1],yend=n_tip[2],
+    #             color="#0000ff",arrow=arrow15) +
+    # moving
+    geom_path(aes(x=p_x,y=p_y,group=th)) +
+    geom_point(aes(x=p_x,y=p_y,group=th),color="blue") +
+    # labs(title = 'th: {th_range}') +
+    geom_point(x=p[1],y=p[2],color="red") +
+    coord_fixed() +
+    facet_wrap(~th) # transition_manual(row)
+}
+show_variable_angle()
+```
+
+## Calculate incenter locus
+
+Note: 150 degrees base vertex motion sweeps 360
+
+```{r}
+get_incenter_locus <- function(a,deg_step=1)
+  seq(0,360,deg_step) %>%
+  map(~attr(get_opt_tri(.x,a),"incenter")) %>%
+  map_dfr(~tibble(x=.x[1],y=.x[2]))
+```
+
+Compute / retrieve incenter locus as data frame
+
+```{r}
+fname_incenter <- "data/incenter_locus.csv"
+if (file.exists(fname_incenter)) {
+  df_incenter <- read_csv(fname_incenter)
+} else {
+  df_incenter <- get_incenter_locus(2) %>%
+    mutate_all(~round(.,4))
+  # avoid multiple windings
+  max_row <- df_incenter %>% 
+    {which(.$x<0&.$y>0&lead(.$y)<0)} # y zero crossing
+  df_incenter %>%
+    head(max_row) %>%
+    write_csv(fname_incenter)
+}
+```
+
+## Show orbit triangle
+
+```{r}
+show_opt_tri <- function(t_deg,a,incenter_locus=NULL) {
+  df_ell_bound <- ell_poly(a)
+  df_ell_foci <- ell_foci(a)
+  df_opt_tri <- get_opt_tri(t_deg,a)
+  incenter <- attr(df_opt_tri,"incenter")
+
+  arrow15 <- arrow(angle = 15, type = "closed",length=unit(10,"points"))  
+  ggplot(df_opt_tri) +
+    # fixed
+    geom_point(x=0,y=0,shape=4) +
+    geom_path(aes(px,py),df_ell_bound) +
+    #geom_point(x=p0[1],y=p0[2]) +
+    geom_point(aes(fx,fy),df_ell_foci) +
+    geom_polygon(aes(p_x,p_y),
+                 linetype="dotted",
+                 color="blue",fill=NA) +
+    geom_segment(aes(x=p_x,y=p_y,xend=ntip_x,yend=ntip_y),arrow=arrow15) +
+    geom_point(aes(p_x,p_y),color="blue") +
+    geom_point(aes(p_x,p_y),df_opt_tri%>%slice(1),color="red") +
+    {
+      if(is.null(incenter_locus))
+        geom_blank()
+      else
+        geom_path(aes(x,y)
+                  ,data=incenter_locus
+                  ,color="green"
+                  ,linetype=2
+                  #,shape="."
+        )  
+    } + 
+    geom_point(x=incenter[1],y=incenter[2],
+               color="green",size=3) +
+    coord_fixed() +
+    labs(title="triangular orbit",
+         subtitle=glue("a={a}, t={t_deg}°"),x="",y="") #+
+    # theme(plot.margin=grid::unit(c(0,0,0,0), "mm"))
+}
+show_opt_tri(45,2,df_incenter)
+```
+
+## Compute animation
+
+Save frames to files
+
+```{r,eval=F,message=F}
+fnames_png <- list.files(path = "./pics",
+                         pattern = "tri_.*\\.png$",
+                         full.names = T)
+if (length(fnames_png)>0)
+  file.remove(fnames_png)
+
+tic()
+plan("multiprocess")
+deg_vec <- seq(0,360,1)
+walk_vec <- deg_vec %>%
+  future_iwalk(~{
+    fname<-sprintf("./pics/tri_%04d.png",.y)
+    p_tri<-show_opt_tri(.x,2,df_incenter)
+    fname%>%ggsave(p_tri,dpi = 100)
+    # fname%>%image_read%>%image_trim%>%image_write(fname)
+  })
+toc()
+```
+
+Combine frames into animated .gif
+
+```{r,eval=F,message=F}
+fnames_png <- list.files(path = "./pics",
+                         pattern = "tri_.*\\.png$",
+                         full.names = T)
+fnames_png %>% 
+  map(image_read) %>% # reads each path file
+  map(image_trim) %>% # trims blank borders
+  image_join() %>% # joins image
+  # image_animate(fps=5) %>% # animates, can opt for number of loops
+  # image_write_video("tris_a=2.mp4",framerate=10)
+  image_write_gif("pics/tris_a=2.gif",delay=.1)
+
+file.remove(fnames_png)
+```
+
+<!-- gganimate, buggy! -->
+
+```{r,include=F,eval=F}
+anim_opt_tri <- function(a) {
+  df_ell_bound <- ell_poly(a)
+  df_ell_foci <- ell_foci(a)
+  df_opt_tri <- tibble(t=seq(0,359,1),
+                           tri=t%>%map(get_opt_tri,a=a)) %>%
+    unnest(tri)
+  # View(df_opt_tri)
+  # df_opt_tri
+  df_opt_tri %<>%
+    group_by(t) %>%
+    mutate(pfirst_x=first(p_x),
+           pfirst_y=first(p_y)) %>%
+    ungroup
+
+  arrow15 <- arrow(angle = 15, type = "closed",length=unit(10,"points"))
+  df_opt_tri %>%
+    ggplot(aes(x=p_x,y=p_y)) +
+    # fixed
+    geom_point(x=0,y=0,shape=4) +
+    geom_path(aes(px,py),df_ell_bound) +
+    #geom_point(x=p0[1],y=p0[2]) +
+    geom_point(aes(fx,fy),df_ell_foci)  +
+    geom_polygon(linetype="dotted",color="#0000ff",fill=NA) +
+    geom_segment(aes(xend=ntip_x,yend=ntip_y),arrow=arrow15) +
+    geom_point(color="#0000ff") +
+    geom_point(aes(pfirst_x,pfirst_y),color="#ff0000") +
+    coord_fixed() +
+    labs(title = 't={frame_time%>%as.integer}, a={a}') +
+    #labs(title="triangular orbit",
+     #    subtitle=glue("a={a}, t: {frame_time}°"),x="",y="")
+    transition_time(t) #+
+    #ease_aes("linear")
+}
+anim_opt_tri(2)
+```

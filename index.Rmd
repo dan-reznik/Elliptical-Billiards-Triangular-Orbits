@@ -1,0 +1,30 @@
+---
+title: "Invariants of N-Periodics in an Elliptic Billiard"
+author: "Dan Reznik, Ronaldo Garcia, Jair Koiller"
+date: "Last update: `r lubridate::with_tz(Sys.time(),tzone='Brazil/East')`"
+output:
+  bookdown::html_document2:
+    theme: cosmo
+    css: style.css
+    toc: true
+    toc_depth: 1
+    toc_float:
+      toc_collapsed: true
+      smooth_scroll: yes
+    fig_caption: yes
+    highlight: haddock
+    keep_md: yes
+    number_sections: yes
+link-citations: yes
+bibliography: ["elliptic_billiards_v2.bib","media.bib","authors_rgk_v1.bib"]
+csl: acm.csl
+---
+
+```{r,echo=F,fig.align="center",out.width="33%"}
+knitr::include_graphics("pics/ronaldo_dan_jair_impa_31-jul-2019.png")
+```
+
+Check out our [media page](videos.html) and our recent publication [@reznik2019-intelligencer].
+
+```{r test-main, child="index_expositional.Rmd"}
+```

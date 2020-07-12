@@ -1,0 +1,28 @@
+X(51) = CENTROID OF ORTHIC TRIANGLE = a2cos(B - C) : : 
+X(52) = ORTHOCENTER OF ORTHIC TRIANGLE = cos 2A cos(B - C) : cos 2B cos(C - A) : cos 2C cos(A - B) 
+X(53) = SYMMEDIAN POINT OF ORTHIC TRIANGLE = tan A cos(B - C) : tan B cos(C - A) : tan C cos(A - B) 
+X(54) = KOSNITA POINT = sec(B - C) : sec(C - A) : sec(A - B) 
+X(59) = ISOGONAL CONJUGATE OF X(11) =  1/(1 - cos(B - C)) : 1/(1 - cos(C - A)) : 1/(1 - cos(A - B)) 
+X(60) = ISOGONAL CONJUGATE OF X(12) = 1/(1 + cos(B - C)) : 1/(1 + cos(C - A)) : 1/(1 + cos(A - B))
+X(61) = ISOGONAL CONJUGATE OF X(17) = sin(A + π/6) : sin(B + π/6) : sin(C + π/6)
+X(62) = ISOGONAL CONJUGATE OF X(18) = sin(A - π/6) : sin(B - π/6) : sin(C - π/6) 
+X(64) = ISOGONAL CONJUGATE OF X(20) = 1/(cos A - cos B cos C) : 1/(cos B - cos C cos A) : 1/(cos C - cos A cos B) 
+X(66) = ISOGONAL CONJUGATE OF X(22) = bc/(b4 + c4 - a4) : : 
+X(67) = ISOGONAL CONJUGATE OF X(23) = bc/(b4 + c4 - a4 - b2c2) : : 
+X(68) = PRASOLOV POINT = cos A sec 2A : cos B sec 2B : cos C sec 2C 
+X(70) = ISOGONAL CONJUGATE OF X(26) = bc/(b2 cos 2B + c2 cos 2C - a2 cos 2A) : :
+X(74) = ISOGONAL CONJUGATE OF EULER INFINITY POINT = 1/(cos A - 2 cos B cos C) : 1/(cos B - 2 cos C cos A) : 1/(cos C - 2 cos A cos B) 
+X(76) = 3rd BROCARD POINT = 1/a3 : 1/b3 : 1/c3 
+X(77) = ISOGONAL CONJUGATE OF X(33) = 1/(1 + sec A) : 1/(1 + sec B) : 1/(1 + sec C)
+X(78) =  ISOGONAL CONJUGATE OF X(34) =    1/(1 - sec A) : 1/(1 - sec B) : 1/(1 - sec C)
+X(79) = ISOGONAL CONJUGATE OF X(35) = 1/(1 + 2 cos A) : : 
+X(80) = REFLECTION OF INCENTER IN FEUERBACH POINT = 1/(1 - 2 cos A) : 1/(1 - 2 cos B) : 1/(1 - 2 cos C) 
+X(82) = ISOGONAL CONJUGATE OF X(38) = 1/(b2 + c2) : 1/(c2 + a2) : 1/(a2 + b2)
+X(83) = CEVAPOINT OF CENTROID AND SYMMEDIAN POINT = bc/(b2 + c2) : ca/(c2 + a2) : ab/(a2 + b2)
+X(85) = ISOTOMIC CONJUGATE OF X(9) = b2c2/(b + c - a) : c2a2/(c + a - b) : a2b2/(a + b - c)
+X(93) = ISOGONAL CONJUGATE OF X(49) = sec 3A : sec 3B : sec 3C
+X(94) = ISOGONAL CONJUGATE OF X(50) = csc 3A : csc 3B : csc 3C 
+X(95) = CEVAPOINT OF CENTROID AND CIRCUMCENTER = b2c2 sec(B - C) : :
+X(96) = ISOGONAL CONJUGATE OF X(52) = sec 2A sec(B - C) : sec 2B sec(C - A) : sec 2C sec(A - B) 
+X(97) = ISOGONAL CONJUGATE OF X(53) = cot A sec(B - C) : cot B sec(C - A) : cot C sec(A - B)
+X(98) = TARRY POINT = bc/(b4 + c4 - a2b2 - a2c2) : : 

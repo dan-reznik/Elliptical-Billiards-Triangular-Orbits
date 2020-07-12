@@ -1,0 +1,19 @@
+---
+title: "Creates zip of pictures used by paper"
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+fnames_to_zip <- read_lines("index_expositional.Rmd") %>%
+  keep(~str_detect(.x,"include_graphics")) %>%
+  str_extract('pics/.*(?=")')
+```
+
+```{r}
+zip::zipr("pics.zip",fnames_to_zip)
+```
+
+

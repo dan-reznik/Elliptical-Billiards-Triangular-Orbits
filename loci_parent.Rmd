@@ -1,0 +1,40 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+```{r}
+renderPoly <- function(polygonal,n,distinct,vertices,dir) {
+  knit_expand(file="loci_generic.Rmd",
+              polygonal=polygonal,
+              n=n,distinct=distinct,
+              vertices=vertices,
+              dir=dir) %>%
+    str_c(collapse="") %>% write_file("temp.Rmd")
+  
+  rmarkdown::render("temp.Rmd",output_file=str_c(dir,"_auto.html"),quiet=T) 
+}
+```
+
+Render all tight to billiard
+
+```{r}
+renderPoly(polygonal="Quadrangular",n=4,distinct=1,vertices="123",dir="loci_quad")
+renderPoly(polygonal="Pentagonal",n=5,distinct=2,vertices="123 and 124",dir="loci_pent")
+renderPoly(polygonal="Hexagonal",n=6,distinct=3,vertices="123, 124, and 135",dir="loci_hex")
+renderPoly(polygonal="Heptagonal",n=7,distinct=4,vertices="123, 124, 125 and 135",dir="loci_hept")
+```
+
+Render all visible all
+
+```{r}
+renderPoly(polygonal="Quadrangular",n=4,distinct=1,vertices="123",dir="loci_quad_all")
+renderPoly(polygonal="Pentagonal",n=5,distinct=2,vertices="123 and 124",dir="loci_pent_all")
+renderPoly(polygonal="Hexagonal",n=6,distinct=3,vertices="123, 124, and 135",dir="loci_hex_all")
+renderPoly(polygonal="Heptagonal",n=7,distinct=4,vertices="123, 124, 125 and 135",dir="loci_hept_all")
+```

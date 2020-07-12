@@ -1,0 +1,224 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Load Libraries
+
+```{r,message=F}
+library(tidyverse)
+fs::dir_ls("math",regexp = "\\.txt")
+```
+
+# Process first 100
+
+{% raw %}
+```{r}
+fname <- "math/high_prio_tri_points.txt"
+df <- read_file(fname) %>%
+  read_delim(delim="=",col_names = c("kimberling","center_name","trilinears")) %>%
+  mutate_all(str_trim) %>%
+  mutate_at(vars(trilinears),~str_replace_all(.," : ",",")) %>%
+  # curly braces: github pages jekyll pukes
+  mutate(math=sprintf('{"%s",{%s},"%s"}',kimberling,trilinears,center_name)) %>%
+  mutate(n=str_sub(kimberling,start=3,end=-2)%>%as.integer) %>%
+  arrange(n)
+df
+```
+{% endraw %}
+
+```{r}
+1:100 %>% setdiff(df$n)
+```
+
+```{r}
+df$math %>% 
+  str_c(collapse=",\r\n") %>%
+  write_file("math/trilinear_output.txt")
+```
+
+Will try to purify by hand
+
+```{r}
+fs::dir_ls("math")
+```
+
+Which have the wrong # of fields
+
+```{r}
+fname_low <- "math/low_prio_tri_points.txt"
+tibble(fields=count_fields(fname_low,tokenizer_delim(delim="=")))%>%
+  mutate(line=row_number())%>% 
+  filter(fields!=3)
+```
+
+```{r}
+fix_etc <- function(s) s %>%
+  str_replace_all("π/(\\d)","Pi\\1") %>%
+  str_replace_all("sec\\((.) - (.)\\)", " 1/cos(\\1 - \\2)") %>%
+  str_replace_all("csc\\((.) - (.)\\)", " 1/sin(\\1 - \\2)") %>%
+  str_replace_all("cos\\((.) \\+ ([ABCPi\\d]{1,3})\\)", "(cos \\1 cos \\2 - sin \\1 sin \\2)") %>%
+  str_replace_all("cos\\((.) - ([ABCPi\\d]{1,3})\\)", "(cos \\1 cos \\2 + sin \\1 sin \\2)") %>%
+  str_replace_all("sin\\((.) \\+ ([ABCPi\\d]{1,3})\\)", "(sin \\1 cos \\2 + sin \\2 cos \\1)") %>%
+  str_replace_all("sin\\((.) - ([ABCPi\\d]{1,3})\\)", "(sin \\1 cos \\2 - sin \\2 cos \\1)") %>%
+  str_replace_all("(cos|sin|sec|csc|tan|cot) ","\\1")%>%
+  str_replace_all("(a|b|c)(\\d)(?![ABC])","\\1^\\2 ") %>%
+  str_replace_all("(abc|bca|cab)","a b c") %>%
+  str_replace_all("(cba|bac|acb)","a b c") %>%
+  str_replace_all("(ab|ba)","a b") %>%
+  str_replace_all("(ac|ca)","a c") %>%
+  str_replace_all("(bc|cb)","b c") %>%
+  str_replace_all("  +"," ") %>%
+  str_replace_all(" +\\)",")") %>%
+  str_replace_all("cosPi","cPi") %>%
+  str_replace_all("sinPi","sPi") %>%
+  str_squish()
+```
+
+```{r}
+rotate_vars <- function(s) s%>%
+  str_replace_all("A","B~") %>%
+  str_replace_all("B(?!~)","C~") %>%  
+  str_replace_all("C(?!~)","A~") %>%
+  str_replace_all("a(?![:alpha:])","b~") %>%
+  str_replace_all("b(?![[:alpha:]~])","c~") %>%
+  str_replace_all("c(?![[:alpha:]~])","a~") %>%
+  str_remove_all(fixed("~"))
+```
+
+```{r}
+fix_colon_colon <- function(s) {
+  s1 <- s %>% str_remove_all(": *:")
+  s2 <- rotate_vars(s1)
+  s3 <- rotate_vars(s2)
+  cat(c(s1,s2,s3))
+  str_c(s1,s2,s3,sep=" : ")
+}
+```
+
+{% raw %}
+```{r}
+df_low <- read_delim(fname_low,
+                     delim="=",
+                     col_names = c("kimberling","center_name","trilinears")) %>%
+  mutate_at(vars(trilinears),fix_etc) %>%
+  mutate(needs_rot=str_detect(trilinears,": *:")) %>%
+  mutate_at(vars(trilinears),~if_else(needs_rot,map_chr(.,fix_colon_colon),.)) %>%
+  mutate_all(str_trim) %>%
+  mutate_at(vars(trilinears),~str_replace_all(.," : ",",")) %>%
+  # do not use glue's double curly braces: github pages jekyll pukes
+  mutate(math=sprintf('{"%s",{%s},"%s"}',kimberling,trilinears,center_name)) %>%
+  mutate(n=str_sub(kimberling,start=3,end=-2)%>%as.integer) %>%
+  arrange(n)
+```
+
+{% endraw %}
+
+```{r}
+df_low$math %>% 
+  str_c(collapse=",\r\n") %>%
+  write_file("math/trilinear_low_output.txt")
+```
+
+# Can I process all of ETC?
+
+```{r}
+etc <- read_file("https://faculty.evansville.edu/ck6/encyclopedia/ETC.html") %>%
+  str_replace_all(fixed("&nbsp;")," ") %>%
+  str_split(fixed("\r\n")) %>%
+  first %>%
+  str_squish() %>%
+  keep(~str_length(.)>0)
+
+etc %>% write_lines("math/etc.txt")
+```
+
+```{r}
+etc_headers <- read_file("math/etc.txt") %>%
+  str_locate_all(regex('(?<=\n<h3 id="X\\d{1,4}">)[^<]+?(?=<)',dotall=T)) %>%
+  first
+
+etc_headers_str <- read_file("math/etc.txt") %>%
+  str_sub(etc_headers) %>%
+  str_replace_all(fixed("\n")," ")
+
+etc_headers_str %>% write_lines("math/etc_headers.txt")
+
+etc_headers_str %>% length
+```
+
+Which ones contain & weirdness
+
+```{r}
+etc_headers_str %>%
+  keep(str_detect,fixed("&"))
+```
+
+```{r}
+replace_ampersand <- function(s) s%>%
+  str_replace_all(c("&Psi;"="Ψ",
+                    "&Lambda;"="Λ",
+                    "&cap;"="∩"))
+etc_headers_str %>%
+  keep(str_detect,fixed("&")) %>%
+  replace_ampersand
+```
+
+Write without Ampersand
+
+```{r}
+etc_headers_str_noamp <- etc_headers_str %>%
+  replace_ampersand
+etc_headers_str_noamp %>%
+  write_lines("math/etc_headers_noamp.txt")
+```
+
+## Get Trilienars from each header
+
+<h3 id="X1">X(1) = INCENTER<a id="Incenter" name="Incenter"></a></h3>
+Trilinears 1 : 1 : 1<br>
+
+```{r}
+etc_headers_x <- etc_headers_str%>%str_extract("X\\(\\d+?\\)")
+```
+
+
+```{r}
+etc_999 <- read_file("math/etc.txt") %>%
+  str_sub(etc_headers%>%as.data.frame%>%mutate(end=end+1000)%>%as.matrix) %>%
+ # str_extract("([tT]rilinears.*\\n)+") %>%
+  str_extract(regex("[tT]rilinears.*?(?=([bB]arycentrics|X\\())",dotall = T)) %>%
+  str_replace_all(c("<br>"="",
+                    "&nbsp ; "="",
+                    "&pi;"="π",
+                    "&omega;"="ω",
+                    "<sup>([^<]+)</sup>"="^\\1 ",
+                    "<sub>([^<]+)</sub>"="_\\1",
+                    "\\["="(",
+                    "\\]"=")",
+                    "(?<=[^abc])([abc])([abc])(?=[^abc])"="\\1 \\2",
+                    "(?<=[^abc])([abc])([abc])([abc])(?=[^abc])"="\\1 \\2 \\3")) %>%
+  str_replace_all(c("([:alpha:]) +\\^"="\\1^",
+                    " +\\)"=")",
+                    ":\\s+:"="::",
+                    "<[^<>]{1,2}>"="")) %>%
+  str_remove("[tT]rilinears") %>% # first one for split
+  str_remove(regex("\\(Peter.*?Moses.*?\\)",ignore_case = T)) %>%
+  str_split("([tT]rilinears|=)") %>%
+  map(str_squish) %>%
+  map(str_remove,"<p>.*") %>%
+  map(head,2)
+write_lines(etc_999%>%map2_chr(etc_headers_str_noamp,
+                               ~str_c(c(.y,.x),collapse="|")),'math/etc_999.txt')
+length(etc_999)
+```
+
+
+
+```{r}
+etc_headers <- read_file("math/etc.txt") %>%
+  head(10) %>%
+  str_extract_all(regex('(?<=\n<h3 id="X\\d{1,4}">)(.*?)(?=</h3>).*?([Tt]rilnears][^<]+)',dotall=T)) %>%
+  first
+```
+

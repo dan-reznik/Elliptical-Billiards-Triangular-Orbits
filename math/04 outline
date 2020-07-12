@@ -1,0 +1,86 @@
+1) circumbilhar
+
+definicao
+
+fig 1
+
+2) circumbilhar derived
+
+fig 2 -- act,exc,media
+fig 3* -- ortico
+
+2.1) excentral: centro x168, nao eliptico
+
+2.2) act e med
+
+act: centrado no x7 (mitten to act)
+eixo paralelo (homotetia)
+
+theorema 2 (chama do paper ballet): act_int: 3 intouchpoints to act estao no bilhar \cite{}
+
+med: centrado no 142, eixos paralelos, homotetia
+
+corolario: orbit intouch points are on the medial circumbilliard
+
+reta: 7,142,2,9,144, 3:1:2:6
+L(2,7) has equation \cite[Central Lines]{etc}:
+https://faculty.evansville.edu/ck6/encyclopedia/CentralLines.html
+
+a(b - c)(b + c - a)x +
+b(c - a)(c + a - b)y +
+c(a - b)(a + b - c)z = 0
+
+I.e., it is L(663), since
+
+X(663) = a(b - c)(b + c - a) ::
+
+Passes thru: 2 7 9 57 63 142 144 226 307 329 527 553 579 672 894 908 1025 1400 1423 1445 1447 1652 1653 1708 1741 1944 2002 2094 2285 2406
+
+Qual a circumconica associada a X(663)
+
+u y z + v z x + w x y = 0
+[equiv] u/x + v/y + w/z = 0
+
+a) c.e. isotomico da L(663)
+
+[u:v:w] perspector
+u = bc(b-c)(a-b-c) :: 
+v = [equiv.] (b-c)(a-b-c)/a ::
+
+
+a) c.e., isogonal da L(663)
+
+[u:v:w]
+u: a (b-c)(a-b-c)
+
+
+1.3) ortico
+
+- transicao para retangulo, 4 pontos Qi
+- mittenpunkt: X6 qdo agudo,  X6*= X6 da preimagem aguda qdo obtuso.
+- 4 pontos de descolamento
+- a/b=1.62... tal q locus de X6 é tangente aos pontos Qi
+- a/b=1.982 o locus de X6* é tangente ao vertice superior e inferior do EB. qdo a orbita passa por ali, o ortico é equilatero
+
+3) circumconicas de centros triangulares
+
+3.1) midlines do medial, separam centros de circumconicas em 7 regioes:
+- ce: interior ao medial e 3 opostas aos vertices do medial
+- ch: 3 opostas aos lados
+- along lines: parabola
+- also: a circumconic is a parabola if and only if its perspector is on the Steiner inellipse
+
+
+---
+
+to do: videos
+1) circumbilhar triangulos randomicos
+2) circumbilhar derivado
+
+exc, act, medial: https://youtu.be/Og7xLgkrLqw 
+act: https://youtu.be/18RyUdh8qLk
+3) circumbilhar ortico
+
+ort: https://youtu.be/5KL8st2vIb0
+ort2: marcando pontos de orbita retangulo e descolamento do X6 para o X9* = X6 da pré-imagem obtusa da orbita
+
