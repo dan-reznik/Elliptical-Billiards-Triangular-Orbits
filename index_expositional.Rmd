@@ -734,10 +734,6 @@ Through interactive experimentation we have identified some new properties for t
 * perpendicular dropped from excentral vertex is on caustic, $\forall N$.
 * $\cos(\alpha)|_{N>3} = (1-c_N)+c_N\cos(\alpha)|_{N=3}$, $c_N$ an $N$-dependent constant.
 
-# Media by the Authors
-
-We've placed links to all videos, images, applets, and code associated with the present work on a [dedicated page](videos.html).
-
 ***
 ```{r glossary,child="glossary.Rmd"}
 ```

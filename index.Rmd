@@ -13,7 +13,6 @@ output:
       smooth_scroll: yes
     fig_caption: yes
     highlight: haddock
-    keep_md: yes
     number_sections: yes
 link-citations: yes
 bibliography: ["elliptic_billiards_v2.bib","media.bib","authors_rgk_v1.bib"]
@@ -23,6 +22,15 @@ csl: acm.csl
 ```{r,echo=F,fig.align="center",out.width="33%"}
 knitr::include_graphics("pics/ronaldo_dan_jair_impa_31-jul-2019.png")
 ```
+
+More details about this work are available in a [companion page](index.html) and in the following recent talks/presentations:
+
+* 7/29/19 IMPA Talk [video](https://youtu.be/t872mftaI2g) (enable English subtitles)
+* Talk Slides:
+  - 7/29/19 [IMPA](ppt/IMPA_Adventures_in_Ellipses_Triangles.pdf) 
+  - 9/10/19 [PUC-RJ](papers/PUC_Billiard_Surprises.pdf)
+  - 9/17/19 [UFF-RJ](papers/UFF_Billiard_Surprises.pdf)
+  - 12/3/19 [UFMG](papers/UFF_Billiard_Surprises.pdf)
 
 Check out our [media page](videos.html) and our recent publication [@reznik2019-intelligencer].
 
