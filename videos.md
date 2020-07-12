@@ -1,7 +1,7 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
 author: Dan Reznik, Ronaldo Garcia, Jair Koiller, Mark Helman
-date: "Last update: 2020-07-12 12:30:30"
+date: "Last update: 2020-07-12 12:36:52"
 output:
   bookdown::html_document2:
       theme: cosmo
@@ -51,6 +51,10 @@ bookdown::html_document2:
 <!-- {% raw %} -->
 
 <!-- {% endraw %} -->
+
+>I’m going to assume that you love beautiful things and are curious to learn about them. The only things you will need on this journey are common sense and simple human curiosity. --Paul Lockhardt, "A mathematician’s lament" (2009)
+
+Below we provide links to some of the artifacts (webpages, images, videos, applets, code) from ongoing experiments with triangles, billiards, ellipses, and other marvellous geometric objects. The fun and amazement with their beauty truly never ends.
 
 # Our Main Pages
   
