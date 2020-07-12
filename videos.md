@@ -1,7 +1,7 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
-author: Dan Reznik, Ronaldo Garcia, Jair Koiller
-date: "Last update: 2020-07-12 12:18:45"
+author: Dan Reznik, Ronaldo Garcia, Jair Koiller, Mark Helman
+date: "Last update: 2020-07-12 12:26:25"
 output:
   bookdown::html_document2:
       theme: cosmo
@@ -2033,9 +2033,12 @@ To simulate multiple ray bounces within an Elliptic Billiard, try our Mathematic
 * Original (2011) interactive applet showing trajectories in ellipses can be found [here](http://demonstrations.wolfram.com/DynamicBilliardsInEllipse/)
 * Excel spreadsheet for N-Periodic vertices vs starting angle for $N=3,4,\ldots,7, a/b=1.5$ available [here](data/orbitPolys_a15.xlsx)
 
-Back to [main page](index.html)
-
 ***
+
+For comments, corrections, suggestions email me at: `dreznik _theat_ gmail _thedot_ com`.
+
+<!--***
+
 
 # Glossary of Terms {#glossary .tabset .tabset-fade .tabset-pills}
 
@@ -2135,6 +2138,7 @@ Back to [main page](index.html)
 1. [Perspectrix](http://mathworld.wolfram.com/Perspectrix.html)
 1. [Trilinear Pole](http://mathworld.wolfram.com/TrilinearPole.html)
 1. [Trilinear Polar](http://mathworld.wolfram.com/TrilinearPolar.html)
+-->
 
 
 

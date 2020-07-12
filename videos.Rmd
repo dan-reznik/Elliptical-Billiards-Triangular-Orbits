@@ -1,6 +1,6 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
-author: Dan Reznik, Ronaldo Garcia, Jair Koiller
+author: Dan Reznik, Ronaldo Garcia, Jair Koiller, Mark Helman
 date: "Last update: `r lubridate::with_tz(Sys.time(),tzone='Brazil/East')`"
 output:
   bookdown::html_document2:
@@ -177,11 +177,15 @@ cat(unlist(res), sep = '\n')
 * Original (2011) interactive applet showing trajectories in ellipses can be found [here](http://demonstrations.wolfram.com/DynamicBilliardsInEllipse/)
 * Excel spreadsheet for N-Periodic vertices vs starting angle for $N=3,4,\ldots,7, a/b=1.5$ available [here](data/orbitPolys_a15.xlsx)
 
-Back to [main page](index.html)
-
 ***
+
+For comments, corrections, suggestions email me at: `dreznik _theat_ gmail _thedot_ com`.
+
+<!--***
+
 ```{r glossary,child="glossary.Rmd"}
 ```
+-->
 
 
 
