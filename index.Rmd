@@ -23,7 +23,7 @@ csl: acm.csl
 knitr::include_graphics("pics/ronaldo_dan_jair_impa_31-jul-2019.png")
 ```
 
-More details about this work are available in a [companion page](index.html) and in the following recent talks/presentations:
+Recent talks/presentations:
 
 * 7/29/19 IMPA Talk [video](https://youtu.be/t872mftaI2g) (enable English subtitles)
 * Talk Slides:

@@ -1,0 +1,9 @@
+## `r sec` {-}
+
+```{r,echo=F,cache=F}
+kable(df_filt,
+      format = "html", escape = F) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed","responsive"),
+                full_width = T,fixed_thead = T,position = "left") %>%
+  column_spec(1, width="60%")
+```
