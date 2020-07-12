@@ -69,15 +69,7 @@ sheets_id <- Sys.getenv("sheet_id")
 ```
 <!-- {% endraw %} -->
 
-# Introduction
-
-Videos, applets, images, and code related to our research on N-Periodics in an Elliptic Billiard [@reznik2019-intelligencer],[@garcia2020-properties],[@garcia2020-ellipses]. For a seminal work on this subject refer to [@sergei91]. Triangle Centers of 3-periodics are referred to as "X(i)", after Kimberling's Encyclopedia [@etc]. A glossary of planar geometry concepts is provided at [the end](#glossary) of this document, and can be looked up in [@mw].
-
-```{r,out.width="100%",echo=F,fig.cap="N-Periodics and their confocal caustics, N=3,4,5"}
-include_graphics("pics/bouncing345.png")
-```
-
-# Individual Pages
+# Pages with Results, Experiments, Visualizations:
   
 1. [Invariants of 3- and N-Periodics in an Elliptic Billiard](index.html)
 
@@ -191,6 +183,6 @@ Back to [main page](index.html)
 ```{r glossary,child="glossary.Rmd"}
 ```
 
-# References {-}
+
 
 

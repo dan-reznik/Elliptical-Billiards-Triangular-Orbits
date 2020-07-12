@@ -23,6 +23,12 @@ csl: acm.csl
 knitr::include_graphics("pics/ronaldo_dan_jair_impa_31-jul-2019.png")
 ```
 
+# Introduction
+
+Experimental investigation of N-Periodics in an Elliptic Billiard [@reznik2019-intelligencer],[@garcia2020-properties],[@garcia2020-ellipses]. The seminal work on this subject is [@sergei91].
+
+Triangle Centers of 3-periodics are referred to as "X(i)", after Kimberling's Encyclopedia [@etc]. A glossary of planar geometry concepts is provided at [the end](#glossary) of this document, and can be looked up in [@mw].
+
 Recent talks/presentations:
 
 * 7/29/19 IMPA Talk [video](https://youtu.be/t872mftaI2g) (enable English subtitles)
@@ -33,6 +39,10 @@ Recent talks/presentations:
   - 12/3/19 [UFMG](papers/UFF_Billiard_Surprises.pdf)
 
 Check out our [media page](videos.html) and our recent publication [@reznik2019-intelligencer].
+
+```{r,out.width="100%",echo=F,fig.cap="N-Periodics and their confocal caustics, N=3,4,5"}
+knitr::include_graphics("pics/bouncing345.png")
+```
 
 ```{r test-main, child="index_expositional.Rmd"}
 ```

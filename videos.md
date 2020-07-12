@@ -1,7 +1,7 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
 author: Dan Reznik, Ronaldo Garcia, Jair Koiller
-date: "Last update: 2020-07-12 11:59:14"
+date: "Last update: 2020-07-12 12:18:45"
 output:
   bookdown::html_document2:
       theme: cosmo
@@ -52,16 +52,7 @@ bookdown::html_document2:
 
 <!-- {% endraw %} -->
 
-# Introduction
-
-Videos, applets, images, and code related to our research on N-Periodics in an Elliptic Billiard [@reznik2019-intelligencer],[@garcia2020-properties],[@garcia2020-ellipses]. For a seminal work on this subject refer to [@sergei91]. Triangle Centers of 3-periodics are referred to as "X(i)", after Kimberling's Encyclopedia [@etc]. A glossary of planar geometry concepts is provided at [the end](#glossary) of this document, and can be looked up in [@mw].
-
-<div class="figure" style="text-align: center">
-<img src="pics/bouncing345.png" alt="N-Periodics and their confocal caustics, N=3,4,5" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-3)N-Periodics and their confocal caustics, N=3,4,5</p>
-</div>
-
-# Individual Pages
+# Pages with Results, Experiments, Visualizations:
   
 1. [Invariants of 3- and N-Periodics in an Elliptic Billiard](index.html)
 
@@ -1531,7 +1522,7 @@ A p5.js interactive [applet](https://editor.p5js.org/dreznik/full/i1Lin7lt7) whe
 
 <div class="figure" style="text-align: center">
 <img src="pics/applet_02.png" alt="The loci of X(i), i=1,5,10,11 and the many-cuspid envelope of X(88)~X(90)" width="75%" />
-<p class="caption">(\#fig:unnamed-chunk-7)The loci of X(i), i=1,5,10,11 and the many-cuspid envelope of X(88)~X(90)</p>
+<p class="caption">(\#fig:unnamed-chunk-6)The loci of X(i), i=1,5,10,11 and the many-cuspid envelope of X(88)~X(90)</p>
 </div>
 
 To simulate multiple ray bounces within an Elliptic Billiard, try our Mathematica [CDF](cdf/ray_bounces.cdf). It requires installation of the [Wolfram Player](https://www.wolfram.com/player/).
@@ -2145,6 +2136,6 @@ Back to [main page](index.html)
 1. [Trilinear Pole](http://mathworld.wolfram.com/TrilinearPole.html)
 1. [Trilinear Polar](http://mathworld.wolfram.com/TrilinearPolar.html)
 
-# References {-}
+
 
 
