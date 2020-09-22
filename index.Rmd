@@ -33,6 +33,7 @@ Recent talks/presentations:
 
 * 7/29/19 IMPA Talk [video](https://youtu.be/t872mftaI2g) (enable English subtitles)
 * Talk Slides:
+
   - 7/29/19 [IMPA](ppt/IMPA_Adventures_in_Ellipses_Triangles.pdf) 
   - 9/10/19 [PUC-RJ](papers/PUC_Billiard_Surprises.pdf)
   - 9/17/19 [UFF-RJ](papers/UFF_Billiard_Surprises.pdf)
