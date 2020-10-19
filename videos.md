@@ -1,7 +1,7 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
 author: Dan Reznik
-date: "Last update: 2020-10-07 15:29:29"
+date: "Last update: 2020-10-19 15:37:43"
 output:
   bookdown::html_document2:
       theme: cosmo
@@ -1145,8 +1145,91 @@ All videos are available as a single [playlist](https://www.youtube.com/playlist
    <td style="text-align:left;width: 60%; "> Brocard Porism: Family of Second Brocard Triangles is a second Brocard Porism </td>
    <td style="text-align:left;"> T </td>
    <td style="text-align:left;"> 3,6,15,39,182,39498 </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;"> <a href="NA" target="_blank">v1</a> </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/MprJtB4UW9s" target="_blank">v1</a> </td>
+  </tr>
+</tbody>
+</table>
+
+## Inversive Poncelet {-}
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="">
+ <thead>
+  <tr>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> Title </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> sound </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> Kimberling Centers </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> Year </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> urls </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Focus-Inversive N=3 Family in the Elliptic Billiard: Pascal Limaçon-Inscribed Billiard Triangles! </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 9,7 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/Y-j5eXqKGQE" target="_blank">v1</a>, <a href="https://youtu.be/LOJK5izTctI" target="_blank">v2</a> </td>
+  </tr>
+</tbody>
+</table>
+
+## Ellipse-Inscribed Triangles {-}
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="">
+ <thead>
+  <tr>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> Title </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> sound </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> Kimberling Centers </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> Year </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> urls </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Loci of Ellipse-Inscribed Triangles I: Basic Phenomena </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 2,3,4,5,381 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/zjiNgfndBWg" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Loci of Ellipse-Inscribed Triangles II: X(<u>) slides merrily along the Euler line </u>
+</td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 2,4 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/w5KuN_0rQBQ" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Loci of Ellipse-Inscribed Triangles III: family of V1V2 parallels causes rigid locus translation </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> -- </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/zFOeENDJRho" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Loci of Ellipse-Inscribed Triangles IV: Multiple Loci Over Parallel V1V2 </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> -- </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/TpBjKlkFjkg" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Loci of Ellipse-Inscribed Triangles V: Circular Loci if V1V2 Horizontal or Vertical for Certain <u> </u>
+</td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> -- </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/nLeKvxcicNY" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Ellipse-Inscribed Triangles VI: Envelope of X4 Loci is Area-Invariant and Cousin of Pascal's Limaçon </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> -- </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/sPQrz7ddRfA" target="_blank">v1</a> </td>
   </tr>
 </tbody>
 </table>
@@ -1524,6 +1607,13 @@ All videos are available as a single [playlist](https://www.youtube.com/playlist
    <td style="text-align:right;"> 2020 </td>
    <td style="text-align:left;"> <a href="https://youtu.be/aGtDyVjlrvM" target="_blank">v1</a> </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Non-Concentric Circular Poncelet Pair: Invariant Sum of Japanese Theorem Inradii (A. Akopyan) </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5,6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/BEvdUUolUXI" target="_blank">v1</a> </td>
+  </tr>
 </tbody>
 </table>
 
@@ -1814,6 +1904,57 @@ circular + point loci of the pseudo-circumcenter and pseudo-orthocenter, N=5,6 <
    <td style="text-align:left;"> 1,2,3,4,9 </td>
    <td style="text-align:right;"> 2020 </td>
    <td style="text-align:left;"> <a href="https://youtu.be/8hkeksAsx0E" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> New Invariants of Poncelet N-Periodics in the Homothetic Pair </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="NA" target="_blank">v1</a>, <a href="https://youtu.be/2PdsC3CcqaE" target="_blank">v2</a> </td>
+  </tr>
+</tbody>
+</table>
+
+## Inversive Poncelet {-}
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="">
+ <thead>
+  <tr>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> Title </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> sound </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> N </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> Year </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> urls </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Elliptic Billiard N-Periodics: invariant sum of inverse focal distances &amp; inversive Pascal Limaçon </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/FmWq1YiAs5o" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Inversive Elliptic Billiard N-Periodics are Circular Arcs Interscribed between two Pascal Limaçons </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/bFsehskizls" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Inversive Invariants of Elliptic Billiard N-Periodics Nestled within Pascal's Limaçon </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/wkstGKq5jOo" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Invariants of Inversive, Polar, and Dual Polygons derived from N-Periodics in the Elliptic Billiard </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/qyAHOW32NXY" target="_blank">v1</a>, <a href="https://youtu.be/4JecobQ7G5Y" target="_blank">v2</a> </td>
   </tr>
 </tbody>
 </table>
