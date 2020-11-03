@@ -1,7 +1,7 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
 author: Dan Reznik
-date: "Last update: 2020-11-03 12:37:58"
+date: "Last update: 2020-11-03 12:43:02"
 output:
   bookdown::html_document2:
       theme: cosmo
@@ -1973,7 +1973,7 @@ circular + point loci of the pseudo-circumcenter and pseudo-orthocenter, N=5,6 <
    <td style="text-align:left;"> T </td>
    <td style="text-align:left;"> 5 </td>
    <td style="text-align:right;"> 2020 </td>
-   <td style="text-align:left;"> <a href="NA" target="_blank">v1</a>, <a href="https://youtu.be/2PdsC3CcqaE" target="_blank">v2</a> </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/2PdsC3CcqaE" target="_blank">v1</a> </td>
   </tr>
 </tbody>
 </table>
