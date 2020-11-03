@@ -1,7 +1,7 @@
 --- 
 title: "Triangles and Ellipses: Pages and Media"
 author: Dan Reznik
-date: "Last update: 2020-10-19 15:37:43"
+date: "Last update: 2020-11-03 12:37:58"
 output:
   bookdown::html_document2:
       theme: cosmo
@@ -1171,6 +1171,13 @@ All videos are available as a single [playlist](https://www.youtube.com/playlist
    <td style="text-align:right;"> 2020 </td>
    <td style="text-align:left;"> <a href="https://youtu.be/Y-j5eXqKGQE" target="_blank">v1</a>, <a href="https://youtu.be/LOJK5izTctI" target="_blank">v2</a> </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Focus-Inversive Polygons' Equi-Area Pedal Polygons (wrt foci) </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> -- </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/0L2uMk2xyKk" target="_blank">v1</a> </td>
+  </tr>
 </tbody>
 </table>
 
@@ -1415,10 +1422,31 @@ All videos are available as a single [playlist](https://www.youtube.com/playlist
    <td style="text-align:right;"> 2020 </td>
    <td style="text-align:left;"> <a href="https://youtu.be/f0JwRlu7iaY" target="_blank">v1</a> </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Circumcircles of Focus with Consecutive Vertices Homothetic to Focus Antipedal </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5,6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/kVxh5jfZb9Q" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Incenters of Focus Triads: Invariant Area Ratio to N-Periodic and Elliptic Locus </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/ehnbRnCUmS0" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> An Invariant Based on Inradii and Circumradii of Subtriangles in the Elliptic Billiard </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/ipOEfbxWsdk" target="_blank">v1</a> </td>
+  </tr>
 </tbody>
 </table>
 
-## Self-Intersecting {-}
+## Self-Intersected {-}
 
 <table class="table table-striped table-hover table-condensed table-responsive" style="">
  <thead>
@@ -1451,6 +1479,41 @@ All videos are available as a single [playlist](https://www.youtube.com/playlist
    <td style="text-align:left;"> 5 </td>
    <td style="text-align:right;"> 2019 </td>
    <td style="text-align:left;"> <a href="https://youtu.be/ZaqvmK22pBM" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Elliptic Billiard: Self-Intersected 6-Periodics (type I) </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/fOD85MNrmdQ" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Elliptic Billiard: Self-Intersected 6-Periodics (type II) </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/gQ-FbSq7wWY" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Self-Intersected 6-Periodics in the Elliptic Billiard: Invariant Perimeter Focus-Inversive Polygon </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/7lXwjXj-8YY" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Elliptic Billiard 8-Periodics: Null sum of double cosines of outer polygon </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 8 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/GEmV_U4eRIE" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Family of Self-Intersecting 4-Periodics in the Elliptic Billiard: Inversive Polygon is a Segment </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/207Ta31Pl9I" target="_blank">v1</a> </td>
   </tr>
 </tbody>
 </table>
@@ -1955,6 +2018,41 @@ circular + point loci of the pseudo-circumcenter and pseudo-orthocenter, N=5,6 <
    <td style="text-align:left;"> 5 </td>
    <td style="text-align:right;"> 2020 </td>
    <td style="text-align:left;"> <a href="https://youtu.be/qyAHOW32NXY" target="_blank">v1</a>, <a href="https://youtu.be/4JecobQ7G5Y" target="_blank">v2</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Invariant Inversive Perimeter (all N) and Area Product (odd N) </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/bTkbdEPNUOY" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Invariant Area Ratio Between Focus-Inversive Polygons for all N </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/eG4UCgMkKl8" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Centers of Inversive Arcs area a Bicentric Poncelet Family w/ Invariants </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/mXkk_4RYrnU" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Invariant Inversive perimeter and N=6 a/b=2 Null Antipedal Area </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/fOAES-CzjNI" target="_blank">v1</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> Loci of Invariant Inversive perimeter and N=6 a/b=2 Null Antipedal Area </td>
+   <td style="text-align:left;"> T </td>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://youtu.be/HMhZW_kWLGw" target="_blank">v1</a> </td>
   </tr>
 </tbody>
 </table>
@@ -2471,6 +2569,33 @@ To simulate multiple ray bounces within an Elliptic Billiard, try our Mathematic
    <td style="text-align:left;"> 3 </td>
    <td style="text-align:right;"> 2020 </td>
    <td style="text-align:left;"> <a href="https://dan-reznik.github.io/ellipse-mounted-triangles/" target="_blank">img</a> </td>
+  </tr>
+</tbody>
+</table>
+
+## Self-Intersected Polygons {-}
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="">
+ <thead>
+  <tr>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> Title </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> N </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> Year </th>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"> urls </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 60%; "> N=6 Permuted Polygons (60 in 7 inters. groups) </td>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://photos.app.goo.gl/VV45z1zYwbcZQxcR8" target="_blank">img</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 60%; "> N=8 Permuted Polygons (2520 in 18 inters. groups) </td>
+   <td style="text-align:left;"> 8 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> <a href="https://photos.app.goo.gl/HXXDmZhepXK4QSEv7" target="_blank">img</a> </td>
   </tr>
 </tbody>
 </table>
