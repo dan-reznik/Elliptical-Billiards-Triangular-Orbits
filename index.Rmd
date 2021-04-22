@@ -36,8 +36,8 @@ Recent talks/presentations:
 
   - 7/29/19 [IMPA](ppt/IMPA_Adventures_in_Ellipses_Triangles.pdf) 
   - 9/10/19 [PUC-RJ](papers/PUC_Billiard_Surprises.pdf)
-  - 9/17/19 [UFF-RJ](papers/UFF_Billiard_Surprises.pdf)
-  - 12/3/19 [UFMG](papers/UFF_Billiard_Surprises.pdf)
+  - 9/17/19 UFF-RJ
+  - 12/3/19 UFMG
 
 Check out our [media page](videos.html) and our recent publication [@reznik2019-intelligencer].
 
